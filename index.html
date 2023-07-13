@@ -11,6 +11,8 @@
       let dieRoll = 0;
       let computerSelection = getComputerChoice();
       let playerSelection = "Rock";
+      let pScore = 0;
+      let cScore = 0;
       playerSelection = playerSelection.toLowerCase();
       function getComputerChoice() {
         dieRoll = Math.floor(Math.random() * 3);
@@ -24,7 +26,7 @@
           return "Spock!";
         }
       }
-      function playGame(playerSelection, computerSelection) {
+      function playRound(playerSelection, computerSelection) {
         // Create a function that returns either Rock, Paper, or Scissors based on
         // player selection vs computer randomized selection.
         if (playerSelection === "rock") {
@@ -33,9 +35,11 @@
               return "It's a tie! Play again!";
               break;
             case "paper":
+              cScore++;
               return "Paper beats rock, you lose!";
               break;
             case "scissors":
+              pScore++;
               return "Rock beats scissors, you win, GG!";
               break;
             default:
@@ -44,12 +48,14 @@
         } else if (playerSelection === "paper") {
           switch (computerSelection) {
             case "rock":
+              pScore++;
               return "Ooh - paper beats rock, you win!";
               break;
             case "paper":
-            return "It's a tie! Play again!";
+              return "It's a tie! Play again!";
               break;
             case "scissors":
+              cScore++;
               return "Got you! Scissors beats paper, you lose.";
               break;
             default:
@@ -58,19 +64,33 @@
         } else if (playerSelection === "scissors") {
           switch (computerSelection) {
             case "rock":
+              cScore++;
               return "Bam! Rock beats scissors, you lose.";
               break;
             case "paper":
+              pScore++;
               return "Uh-oh, scissors beats paper, you win, GG!";
               break;
             case "scissors":
-            return "It's a tie! Play again!";
+              return "It's a tie! Play again!";
               break;
             default:
               arguments;
           }
         } else {
           console.log("Spock!");
+        }
+      }
+      function game() {
+        pScore = 0;
+        cScore = 0;
+        for (let i = 0; i < 5 && pScore < 3 && cScore < 3; i++) {
+          computerSelection = getComputerChoice();
+          console.log(computerSelection);
+          playerSelection = prompt();
+          playerSelection = playerSelection.toLowerCase();
+          console.log(playRound(playerSelection, computerSelection));
+          console.log("You: ",pScore," CPU: ",cScore);
         }
       }
     </script>
