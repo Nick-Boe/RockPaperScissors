@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <!-- GUI will be implemented later -- Must play Rock Paper Scissors in console currently. -->
+    <script>
+      let dieRoll = 0;
+      let computerSelection = getComputerChoice();
+      let playerSelection = "Rock";
+      function getComputerChoice() {
+        dieRoll = Math.floor(Math.random() * 3);
+        if (dieRoll === 0) {
+          return("Rock");
+        } else if (dieRoll === 1) {
+          return("Paper");
+        } else if (dieRoll === 2) {
+          return("Scissors");
+        } else {
+          return("Spock!");
+        }
+      }
+      function playGame(playerSelection, computerSelection) {
+        // Create a function that returns either Rock, Paper, or Scissors based on
+        // player selection vs computer randomized selection.
+        if (playerSelection.toLowerCase() === "rock") {
+          switch (computerSelection) {
+            case "rock":
+              return("It's a tie! Play again!");
+              break;
+            case "paper":
+              return("Paper beats rock, you lose!");
+              break;
+            case "scissors":
+              return("Rock beats scissors, you win, GG!");
+              break;
+            default:
+              return("Something is wrong! Try again!");
+          }
+        } else if (playerSelection.toLowerCase() === "paper") {
+          switch (computerSelection) {
+            case "rock":
+              arguments;
+              break;
+            case "paper":
+              arguments;
+              break;
+            case "scissors":
+              arguments;
+              break;
+            default:
+              arguments;
+          }
+        } else if (playerSelection.toLowerCase() === "scissors") {
+          switch (computerSelection) {
+            case "rock":
+              arguments;
+              break;
+            case "paper":
+              arguments;
+              break;
+            case "scissors":
+              arguments;
+              break;
+            default:
+              arguments;
+          }
+        } else {
+          console.log("Spock!");
+        }
+      }
+
+    </script>
+  </body>
+</html>
