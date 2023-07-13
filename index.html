@@ -11,36 +11,37 @@
       let dieRoll = 0;
       let computerSelection = getComputerChoice();
       let playerSelection = "Rock";
+      playerSelection = playerSelection.toLowerCase();
       function getComputerChoice() {
         dieRoll = Math.floor(Math.random() * 3);
         if (dieRoll === 0) {
-          return("Rock");
+          return "rock";
         } else if (dieRoll === 1) {
-          return("Paper");
+          return "paper";
         } else if (dieRoll === 2) {
-          return("Scissors");
+          return "scissors";
         } else {
-          return("Spock!");
+          return "Spock!";
         }
       }
       function playGame(playerSelection, computerSelection) {
         // Create a function that returns either Rock, Paper, or Scissors based on
         // player selection vs computer randomized selection.
-        if (playerSelection.toLowerCase() === "rock") {
+        if (playerSelection === "rock") {
           switch (computerSelection) {
             case "rock":
-              return("It's a tie! Play again!");
+              return "It's a tie! Play again!";
               break;
             case "paper":
-              return("Paper beats rock, you lose!");
+              return "Paper beats rock, you lose!";
               break;
             case "scissors":
-              return("Rock beats scissors, you win, GG!");
+              return "Rock beats scissors, you win, GG!";
               break;
             default:
-              return("Something is wrong! Try again!");
+              return "Something is wrong! Try again!";
           }
-        } else if (playerSelection.toLowerCase() === "paper") {
+        } else if (playerSelection === "paper") {
           switch (computerSelection) {
             case "rock":
               arguments;
@@ -54,7 +55,7 @@
             default:
               arguments;
           }
-        } else if (playerSelection.toLowerCase() === "scissors") {
+        } else if (playerSelection === "scissors") {
           switch (computerSelection) {
             case "rock":
               arguments;
@@ -72,7 +73,6 @@
           console.log("Spock!");
         }
       }
-
     </script>
   </body>
 </html>
