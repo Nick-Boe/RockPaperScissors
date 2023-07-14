@@ -87,7 +87,6 @@
         cScore = 0;
         for (let i = 0; i < 5 && pScore < 3 && cScore < 3; i++) {
           computerSelection = getComputerChoice();
-          console.log(computerSelection);
           playerSelection = prompt();
           playerSelection = playerSelection.toLowerCase();
           console.log(playRound(playerSelection, computerSelection));
